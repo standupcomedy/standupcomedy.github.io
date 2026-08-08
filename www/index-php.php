@@ -58,7 +58,7 @@ brew install entr
           </section>
 
           <section class="home-section">
-            <h2 class="section-title">Hello! Hello!! How High!!!</h2>
+            <h2 class="section-title">Hello, Hello, How High?</h2>
             <div class="voice home-voice">
               <ul class="js-voice-home"></ul>
             </div>
@@ -122,7 +122,7 @@ brew install entr
           メモ：ログインはソーシャルログインとパスキーで実装するようにして、こちらではメアド含めて既存の個人情報は一切取得しないようにする。となると、先にソーシャルログインで、次にパスキーでより簡単にログインできる、みたいなフローの方がいいかも。ログイン実装後は、コメディアンとユーザーとカフェバー経営者、アカウント設計をしっかり立ててから実装を開始する。
           <footer class="footer js-footer">
             <h2>What's this app?</h2>
-            <p>このWebアプリケーションは、スタンダップアップ・コメディアンと集客をお考えのカフェや酒場・バーを経営されている方、そしてインディーズやサブカルというワードにビビっとくる方をつなげることを目的としています。一緒に楽しみましょう！</p>
+            <p>このWebアプリは、スタンダップアップ・コメディアンと集客をお考えのカフェや酒場・バーを経営されている方、そしてインディーズやサブカルというワードにビビっとくる方をつなげることを目的としています。一緒に楽しみましょう！</p>
             <ul>
               <li><a class="js-modal-view" data-view="terms">利用規約</a></li>
               <li><a class="js-modal-view" data-view="privacy">プライバシーポリシー</a></li>
@@ -148,6 +148,9 @@ brew install entr
               <button type="button" class="js-map-current" data-section="map">現在位置</button>
             </div>
           </nav>
+        </div>
+        <div class="map-place">
+          場所情報
         </div>
       </section>
     </div>
