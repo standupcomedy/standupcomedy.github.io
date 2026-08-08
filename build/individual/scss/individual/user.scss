@@ -1,0 +1,27 @@
+.user {
+  min-height: calc(100% - #{$modal-close-height + 10px});
+}
+
+.user-header {
+  @include user-header;
+}
+
+.user-content {
+  padding: 0 0 30px;
+}
+
+.user-nav-outer {
+  @include nav-sticky-bottom;
+  @include nav-sticky-bottom-white;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    $modal-bg
+  );
+}
+
+.user-nav {
+  @include nav-button;
+  @include nav-button-white;
+}

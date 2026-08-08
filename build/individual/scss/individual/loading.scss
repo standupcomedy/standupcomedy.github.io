@@ -1,0 +1,11 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  box-sizing: border-box;
+
+  svg {
+    animation: keyframes-spin 1.5s linear infinite, keyframes-blinker 1s infinite;
+  }
+}

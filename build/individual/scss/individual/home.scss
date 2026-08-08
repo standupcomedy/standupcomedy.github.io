@@ -1,0 +1,26 @@
+.home-mainvisual {
+  width: calc(100% + $section-padding*2);
+  aspect-ratio: 239 / 100;
+  margin: 0 $section-padding*(-1);
+  background: #555;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 239 / 100;
+    object-fit: cover;
+  }
+}
+
+.home-section {
+  padding: 0 0 20px;
+}
+
+.home-nav-outer {
+  @include nav-sticky-bottom;
+}
+
+.home-nav {
+  @include nav-button;
+}

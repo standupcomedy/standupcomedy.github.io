@@ -1,0 +1,6 @@
+.wrapper {
+  height: calc(100% - $tabbar-height - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  overflow: hidden;
+  background: #333;
+  color: #fafafa;
+}

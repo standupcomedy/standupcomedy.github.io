@@ -1,0 +1,53 @@
+.footer {
+  margin: 0 0 $section-padding;
+  padding: 16px;
+  border-radius: 10px;
+  background: #444;
+  font-size: 13px;
+  line-height: 1.5;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-family: "Mouse Memoirs", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 10px 0 20px;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: 5px 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+
+    &.copyright {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  small {
+    font-family: inherit;
+    font-weight: normal;
+    font-style: normal;
+  }
+}

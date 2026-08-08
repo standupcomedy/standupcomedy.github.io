@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>スタンダップ・コメディ</title>
+    <meta name="robots" content="ALL">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no,email=no,address=no,date=no">
+    <meta name="description" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="./assets/homeicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/common.min.css?1786161500">
+  </head>
+  <body data-section="home">
+    <div class="wrapper">
+      <div class="section" data-view="home">
+        <div class="section-inner">
+          <h1 style="display: none;">スタンダップコメディを日本に広めたい</h1>
+
+          <div class="home-mainvisual">
+            <!-- <img src="video" onerror="this.style.opacity=0;"> -->
+          </div>
+
+          <section class="home-section">
+            <h2 class="section-title">Topics</h2>
+            <div class="swiper swiper-topics">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics01"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics02"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics03"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics04"></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="home-section">
+            <h2 class="section-title">Hello! Hello!! How High!!!</h2>
+            <div class="voice home-voice">
+              <ul class="js-voice-home"></ul>
+            </div>
+          </section>
+
+          <footer class="footer js-footer-clone">MEMO: js-footerをコピーします</footer>
+
+          <nav class="home-nav-outer">
+            <div class="home-nav">
+              <button type="button" class="js-section-view" data-section="map">地図</button>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <section class="section js-section" data-view="event">
+        <div class="section-inner">
+          <h1 class="section-title">Event</h1>
+          <div class="calendar js-calendar" data-view="list"></div>
+          <nav class="calendar-nav-outer">
+            <div class="calendar-nav">
+              <button type="button" class="js-calendar-switch">フォロー</button>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" class="js-calendar-view" value="calendar">カレンダー</button>
+              <button type="button" class="js-calendar-view focus" value="list">リスト</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section js-section" data-view="calendar">
+        <div class="section-inner">
+          <h1 class="section-title">My Calendar</h1>
+          <div class="calendar js-calendar" data-view="calendar"></div>
+          <nav class="calendar-nav-outer">
+            <div class="calendar-nav">
+              <button type="button" class="js-calendar-view focus" value="calendar">カレンダー</button>
+              <button type="button" class="js-calendar-view" value="list">リスト</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section" data-view="users">
+        <div class="section-inner">
+          <h1 class="section-title">Stand-up Comedians</h1>
+          <ul class="users-list js-users-list" data-view="everyone"></ul>
+          <nav class="users-nav-outer">
+            <div class="calendar-nav">
+              <button type="button" class="js-users-view focus" value="everyone">みんな</button>
+              <button type="button" class="js-users-view" value="follow">フォロー</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section" data-view="mypage">
+        <div class="section-inner">
+          <h1 class="section-title">My Page</h1>
+          メモ：ログインはソーシャルログインとパスキーで実装するようにして、こちらではメアド含めて既存の個人情報は一切取得しないようにする。となると、先にソーシャルログインで、次にパスキーでより簡単にログインできる、みたいなフローの方がいいかも。ログイン実装後は、コメディアンとユーザーとカフェバー経営者、アカウント設計をしっかり立ててから実装を開始する。
+          <footer class="footer js-footer">
+            <h2>What's this app?</h2>
+            <p>このWebアプリケーションは、スタンダップアップ・コメディアンと集客をお考えのカフェや酒場・バーを経営されている方、そしてインディーズやサブカルというワードにビビっとくる方をつなげることを目的としています。一緒に楽しみましょう！</p>
+            <ul>
+              <li><a class="js-modal-view" data-view="terms">利用規約</a></li>
+              <li><a class="js-modal-view" data-view="privacy">プライバシーポリシー</a></li>
+            </ul>
+            <p class="copyright">
+              <small>2026 &copy; スタンダップコメディを日本に広めたい</small>
+            </p>
+          </footer>
+        </div>
+      </section>
+
+      <section class="section" data-view="map">
+        <div class="map">
+          <div id="gmap">gmap</div>
+
+          <nav class="map-nav-outer">
+            <div class="map-nav">
+              <button type="button" class="js-sub-close" data-section="map">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <div class="map-nav">
+              <button type="button" class="js-map-current" data-section="map">現在位置</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-outer js-modal-outer"></div>
+
+    <nav class="tabbar js-tabbar">
+      <ul class="tabbar-inner">
+        <li>
+          <a class="js-section-view focus" data-section="home">
+            <span class="tabbar-icon">
+              <i data-lucide="house"></i>
+            </span>
+            <span class="tabbar-label">ホーム</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-section="event">
+            <span class="tabbar-icon">
+              <i data-lucide="mic-vocal"></i>
+            </span>
+            <span class="tabbar-label">イベント</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-section="calendar">
+            <span class="tabbar-icon">
+              <i data-lucide="calendar"></i>
+            </span>
+            <span class="tabbar-label">マイカレ</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-section="users">
+            <span class="tabbar-icon">
+              <i data-lucide="users"></i>
+            </span>
+            <span class="tabbar-label">コメディアン</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-section="mypage">
+            <span class="tabbar-icon">
+              <i data-lucide="user"></i>
+            </span>
+            <span class="tabbar-label">マイページ</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./assets/js/jquery-4.0.0.min.js"></script>
+    <script src="./assets/js/common.min.js?1786197865"></script>
+  </body>
+</html>
