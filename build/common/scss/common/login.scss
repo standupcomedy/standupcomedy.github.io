@@ -1,0 +1,21 @@
+.login {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.login-inner {
+  width: 100%;
+  max-width: 400px;
+
+  form {
+    padding: 24px;
+    background: #fff;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.event-openmic {
+  background: $color-event-openmic;
+  color: #fafafa;
+}
+
+.event-show {
+  background: $color-event-show;
+  color: #fafafa;
+}

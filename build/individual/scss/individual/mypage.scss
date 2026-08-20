@@ -1,0 +1,49 @@
+.mypage-status[data-status="login"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1.4 / 1;
+
+  svg {
+    animation: keyframes-spin 1.5s linear infinite, keyframes-blinker 1s infinite;
+  }
+}
+
+.mypage-login-ex {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 14px;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #fff;
+  }
+}
+
+.mypage-login {
+  padding: 30px 0 40px;
+}
+
+.mypage-login-list {
+  margin: 0;
+  padding:  30px 0 50px;
+  list-style: none;
+
+  li {
+    margin: 16px 0 0;
+    padding: 0;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    border-radius: 44px;
+    border: 1px solid #fff;
+    background: #222;
+    color: #fff;
+  }
+}

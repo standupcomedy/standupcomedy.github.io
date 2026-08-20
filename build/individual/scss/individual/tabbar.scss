@@ -1,0 +1,95 @@
+.tabbar {
+  height: $tabbar-height;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: inset 0 7px 8px -8px #222;
+  background: $default-bg;
+  font-size: 10px;
+}
+
+.tabbar-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+  max-width: 430px;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  $tabbar-bg-adjust: 6px;
+  $tabbar-bg-height: $tabbar-height - $tabbar-bg-adjust*2;
+
+  a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: $tabbar-height;
+    color: #bbb;
+
+    &.focus::after {
+      content: '　';  // Bugfix: 全角スペースを使うことで、iOSのダブルクリックで無効になるバグに対応できる
+      position: absolute;
+      top: $tabbar-bg-adjust;
+      left: 50%;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      height: $tabbar-bg-height;
+      margin: 0 0 0  math.div($tabbar-bg-height, -2);
+      aspect-ratio: 1 / 1;
+      border-radius: 46%;
+      background: rgba(255,255,255,0.2);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  img {
+    width: $tabbar-height - 16px;
+    height: $tabbar-height - 16px;
+    object-fit: cover;
+    border-radius: 48%;
+  }
+}
+
+.tabbar-icon,
+.tabbar-label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+$tabbar-label-height: 22px;
+
+.tabbar-icon {
+  align-items: flex-end;
+  height: $tabbar-height - $tabbar-label-height;
+}
+
+.tabbar-label {
+  align-items: center;
+  height: $tabbar-label-height;
+}
+
+.tabbar-profiles[data-has-profile="yes"] {
+  display: none;
+
+  a::after {
+    content: unset;
+  }
+}

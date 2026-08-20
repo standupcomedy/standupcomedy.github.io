@@ -1,0 +1,175 @@
+.form {
+  font-size: 14px;
+  line-height: 1.6;
+
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  dl {
+    padding: 20px 0 0;
+
+    > div + div {
+      margin: 10px 0 0;
+    }
+
+    > div {
+      padding: 16px;
+      border-radius: 10px;
+      background: #f5f5f5;
+    }
+  }
+
+  dt {
+    padding: 0 0 5px;
+    font-weight: bold;
+
+    &.form-item-title-flex {
+      padding: 0 0 10px;
+    }
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 40px;
+    height: unset;
+    line-height: 1.3;
+    field-sizing: content;
+  }
+
+  input[type="date"] {
+    width: 100%;
+    min-width: 120px;
+  }
+}
+
+.form-item-title-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-item-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px 16px;
+  flex-wrap: wrap;
+  padding: 0 10px 0 0;
+
+  dt {
+    padding: 0;
+    white-space: nowrap;
+  }
+}
+
+.form-datetime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  + .form-datetime {
+    margin: 10px 0 0;
+  }
+
+  &:first-child {
+    .form-datetime-delete {
+      display: none;
+    }
+  }
+
+  .form-datetime-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 34px;
+    height: 100%;
+
+    button {
+      padding: 0;
+      border: none;
+      background: transparent;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+}
+
+.form-count {
+  margin: 5px 2px 0;
+  text-align: right;
+  font-size: 12px;
+
+  .is-over {
+    color: #c00;
+    font-weight: bold;
+  }
+}
+
+.form-ex {
+  font-size: 12px;
+}
+
+.form-socialmedia {
+  dd {
+
+    + dd {
+      margin: 5px 0 0;
+    }
+
+    span {
+      font-size: 13px;
+    }
+  }
+}
+
+.form-button {
+  @include nav-button;
+  @include nav-button-white;
+
+  width: fit-content;
+  margin: 0 0 0 auto;
+  border: none;
+
+  button {
+    display: block;
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.form-save-outer {
+  @include nav-sticky-bottom;
+  @include nav-sticky-bottom-white;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    $modal-bg
+  );
+}
+
+.form-save {
+  @include nav-button;
+  @include nav-button-white;
+}

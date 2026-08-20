@@ -1,0 +1,23 @@
+.swiper-topics {
+  width: calc(100% + $section-padding*2);
+  margin: 0 $section-padding*(-1);
+  overflow: hidden;
+
+  .swiper-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #000;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

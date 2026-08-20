@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>スタンダップ・コメディ</title>
+    <meta name="robots" content="ALL">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no,email=no,address=no,date=no">
+    <meta name="description" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="./assets/homeicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mouse+Memoirs&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/common.min.css?1787112255">
+  </head>
+  <body data-section="events">
+    <div class="wrapper">
+      <div class="section" data-view="home">
+        <div class="section-inner">
+          <h1 style="display: none;">スタンダップコメディを日本に広めたい</h1>
+
+          <div class="news js-news">
+            <table class="js-news-content"></table>
+          </div>
+
+          <div class="home-topics">
+            <div class="swiper swiper-topics">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics01" href="./?modal=topics01"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics02" href="./?modal=topics02"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics03" href="./?modal=topics03"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="js-modal-view" data-view="topics04" href="./?modal=topics04"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="home-section">
+            <h2 class="section-title">Hello, Hello, How High?</h2>
+            <div class="voice home-voice">
+              <ul class="js-voice-home"></ul>
+            </div>
+          </section>
+
+          <footer class="footer js-footer-clone">MEMO: js-footerをコピーします</footer>
+        </div>
+      </div>
+
+      <section class="section js-section" data-view="events">
+        <div class="section-inner">
+          <h1 class="section-title">Event Calendar</h1>
+          <div class="calendar js-calendar" data-view="list" data-filter="all"></div>
+          <nav class="calendar-nav-outer">
+
+            <div class="calendar-nav-create">
+              <button type="button" class="js-modal-view" data-view="edit-event">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+
+            <div class="calendar-nav">
+              <button type="button" class="js-calendar-switch focus" value="all">すべて</button>
+              <button type="button" class="js-calendar-switch" value="focus">フォロー中</button>
+              <button type="button" class="js-calendar-switch" value="mycalendar">マイカレ</button>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" class="js-calendar-view" value="calendar">カレンダー</button>
+              <button type="button" class="js-calendar-view focus" value="list">リスト</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section js-section" data-view="users">
+        <div class="section-inner">
+          <h1 class="section-title">Stand-up Comedians</h1>
+          <ul class="users-list js-users-list" data-view="everyone"></ul>
+          <nav class="users-nav-outer">
+            <div class="users-nav">
+              <button type="button" class="js-users-view focus" value="all">すべて</button>
+              <button type="button" class="js-users-view" value="follow">フォロー中</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section js-section" data-view="venues">
+        <div class="section-inner">
+          <h1 class="section-title">Venues</h1>
+          <ul class="venues-list js-venues-list" data-view="all"></ul>
+          <nav class="venues-nav-outer">
+            <div class="venues-nav">
+              <button type="button" class="js-section-view" data-view="map">地図</button>
+            </div>
+            <div class="venues-nav">
+              <button type="button" class="js-venues-view focus" value="all">すべて</button>
+              <button type="button" class="js-venues-view" value="follow">フォロー中</button>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section" data-view="mypage">
+        <div class="section-inner">
+          <h1 class="section-title">My Page</h1>
+          <div class="mypage-login">
+            <div class="mypage-status js-mypage-status" data-status="before">
+              <p class="mypage-login-ex">下記のログインを選択することで、<a class="js-modal-view" data-view="terms" href="./?modal=terms">利用規約</a>、<a class="js-modal-view" data-view="privacy" href="./?modal=privacy">プライバシーポリシー</a> に同意したことになります。</p>
+              <ul class="mypage-login-list">
+                <li>
+                  <a class="js-social-login">Google でログイン</a>
+                </li>
+                <li>
+                  <a class="js-social-login">LINE でログイン</a>
+                </li>
+              </ul>
+              <footer class="footer js-footer">
+                <h2>What's this app?</h2>
+                <p>このWebアプリは、スタンダップコメディアンと、集客をお考えのカフェや酒場・バーの経営者、そして「インディーズ」「サブカル」「お笑い」というワードにビビッとくる方々をつなぎ、日常にクスッと笑顔になれる瞬間を添えるためにデザインしています。一緒に楽しみましょう！</p>
+                <ul>
+                  <li><a class="js-modal-view" data-view="contact" href="./?modal=contact">お問い合わせ</a></li>
+                  <li><a class="js-modal-view" data-view="terms" href="./?modal=terms">利用規約</a></li>
+                  <li><a class="js-modal-view" data-view="privacy" href="./?modal=privacy">プライバシーポリシー</a></li>
+                </ul>
+                <p class="copyright">
+                  <small>2026 &copy; スタンダップコメディを日本に広めたい</small>
+                </p>
+              </footer>
+            </div>
+            <div class="mypage-status js-mypage-status" data-status="login" style="display:none;">
+              <i data-lucide="loader-circle"></i>
+            </div>
+            <div class="mypage-status js-mypage-status" data-status="mypage" style="display:none;">
+
+              ログイン後のマイページ
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-view="map">
+        <div class="map">
+          <div id="gmap">gmap</div>
+
+          <nav class="map-nav-outer">
+            <div class="map-nav">
+              <button type="button" class="js-sub-close" data-view="map">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <div class="map-nav">
+              <button type="button" class="js-map-current">現在位置</button>
+            </div>
+          </nav>
+        </div>
+        <div class="map-place">
+          <div class="map-place-inner">
+            <ul class="map-place-list js-map-place-list"></ul>
+          </div>
+        </div>
+        <div class="map-set-area">
+          <p>地図を動かして、お店・会場を地図の中心に合わせて、「セット」を押してください</p>
+          <div>
+            <button type="button" class="js-sub-close" data-view="map">セット</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-outer js-modal-outer"></div>
+
+    <nav class="tabbar js-tabbar">
+      <ul class="tabbar-inner">
+        <li>
+          <a class="js-section-view focus" data-view="home" href="./">
+            <span class="tabbar-icon">
+              <i data-lucide="house"></i>
+            </span>
+            <span class="tabbar-label">ホーム</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-view="users" href="./?view=users">
+            <span class="tabbar-icon">
+              <i data-lucide="users"></i>
+            </span>
+            <span class="tabbar-label">コメディアン</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-view="events" href="./?view=events">
+            <span class="tabbar-icon">
+              <i data-lucide="mic-vocal"></i>
+            </span>
+            <span class="tabbar-label">イベカレ</span>
+          </a>
+        </li>
+        <li>
+          <a class="js-section-view" data-view="venues" href="./?view=venues">
+            <span class="tabbar-icon">
+              <i data-lucide="map-pinned"></i>
+            </span>
+            <span class="tabbar-label">場所</span>
+          </a>
+        </li>
+        <li class="tabbar-profiles" data-has-profile="no">
+          <a class="js-section-view" data-view="mypage" href="./?view=mypage">
+            <span class="tabbar-icon">
+              <i data-lucide="user"></i>
+            </span>
+            <span class="tabbar-label">マイページ</span>
+          </a>
+        </li>
+        <li class="tabbar-profiles" data-has-profile="yes">
+          <a class="js-section-view" data-view="mypage" href="./?view=mypage">
+            <img src="https://picsum.photos/600/800/?1" onerror="this.style.opacity=0;">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./assets/js/jquery-4.0.0.min.js"></script>
+    <script src="./assets/js/common.min.js?1787125359"></script>
+  </body>
+</html>

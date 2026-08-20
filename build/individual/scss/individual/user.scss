@@ -1,0 +1,66 @@
+.user {
+  min-height: calc(100% - #{$modal-close-height + 10px});
+}
+
+.user-header {
+  @include user-header;
+}
+
+.user-calendar {
+  padding: 30px 0;
+}
+
+.user-profile-outer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0 20px;
+}
+.user-profile {
+  @include nav-button;
+  @include nav-button-white;
+
+  button {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.user-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin: 16px 0 0;
+
+  textarea {
+    min-height: 40px;
+    height: unset;
+    line-height: 1.3;
+    field-sizing: content;
+  }
+
+  button {
+    color: #ccc;
+
+    &.is-able {
+      color: inherit;
+    }
+  }
+}
+
+.user-nav-outer {
+  @include nav-sticky-bottom;
+  @include nav-sticky-bottom-white;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    $modal-bg
+  );
+}
+
+.user-nav {
+  @include nav-button;
+  @include nav-button-white;
+}
+
