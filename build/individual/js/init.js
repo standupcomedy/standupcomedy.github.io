@@ -1,3 +1,5 @@
+const ls_standup = Fn.storageLS('standup') || {}
+
 $(async () => {
   Fn.countFormText()
 
@@ -116,7 +118,7 @@ $(async () => {
   // サブ画面（タブにない画面）を閉じる
   $(document).on('click', '.js-sub-close', function () {
     $(`.js-section-view[data-view="${$(this).attr('data-view')}"]`).removeClass('focus')
-    _body.removeAttr('data-sub')
+    _body.removeAttr('data-sub').removeClass('map-edit-venue')
     return false
   })
 
@@ -195,4 +197,6 @@ $(async () => {
   Module.venue.render(data.venues)
   Module.notice.render(data.notices)
   Module.latest_comment.render(data.latest_comments)
+
+  await initMap()
 })
