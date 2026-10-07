@@ -1,0 +1,52 @@
+// JS連動タイプ
+// <div class="form-toggle js-form-toggle-button" data-status="on">
+//   <input type="hidden" name="" value="">
+// </div>
+
+$form-toggle-line-color: #ddd;
+$form-toggle-circle-color: #fafafa;
+$form-toggle-bg-active-color: #666;
+
+$form-toggle-circle-size: 30px;
+$form-toggle-circle-width: math.round(($form-toggle-circle-size + 6px) * 1.618);
+
+.form-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-toggle-button {
+  position: relative;
+  width: $form-toggle-circle-width;
+  height: $form-toggle-circle-size + 6px;
+  border: 1px solid $form-toggle-line-color;
+  border-radius: 44px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.disable {
+    cursor: default;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: $form-toggle-circle-size;
+    height: $form-toggle-circle-size;
+    border-radius: 50%;
+    background: $form-toggle-circle-color;
+    transition: left 0.1s;
+  }
+
+  &[data-status="on"] {
+    background: $form-toggle-bg-active-color;
+
+    &::before {
+      left: $form-toggle-circle-width - $form-toggle-circle-size - 4px;
+    }
+  }
+}

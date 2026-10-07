@@ -1,0 +1,15 @@
+.home-topics {
+  padding: 20px 0;
+}
+
+.home-section {
+  padding: 0 0 20px;
+}
+
+.home-nav-outer {
+  @include nav-sticky-bottom;
+}
+
+.home-nav {
+  @include nav-button;
+}
