@@ -44,7 +44,7 @@ $(() => {
   // モーダル（コメディアンのコメント more）
   $(document).on('click', '.js-voice-more', async function () {
     const _this = $(this),
-          user_id = _this.attr('data-id'),
+          user_public_id = _this.attr('data-id'),
           num = _this.attr('data-num')
 
     _this.addClass('animation-blinker')
@@ -54,9 +54,9 @@ $(() => {
     // TODO データ取得に成功したらの処理 try error か if文 すべてのajaxが対象
 
     Module.comment.render(data_comment)
-    Var.comments[user_id].num = data_comment.num
-    Var.comments[user_id].has_more = data_comment.has_more
-    Var.comments[user_id].comments.push(...data_comment.comments)
+    Var.comments[user_public_id].num = data_comment.num
+    Var.comments[user_public_id].has_more = data_comment.has_more
+    Var.comments[user_public_id].comments.push(...data_comment.comments)
 
     _this.removeClass('animation-blinker')
     lucide.createIcons()

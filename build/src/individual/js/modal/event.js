@@ -70,12 +70,12 @@ Module.modal.getEventHtml = (event_id) => {
       </div>
       ${(!comedians) ? `` : `
         <ul class="event-member">
-          ${[...comedians].map(user_id => {
-            const comedian = Var.comedian_map.get(user_id)
+          ${[...comedians].map(user_public_id => {
+            const comedian = Var.comedian_map.get(user_public_id)
 
             return `
               <li>
-                <a class="js-modal-view" data-view="comedian" data-id="${comedian?.user_id}" href="./?view=comedians&modal=comedian&id=${comedian?.user_id}">
+                <a class="js-modal-view" data-view="comedian" data-id="${comedian.id}" href="./?view=comedians&modal=comedian&id=${comedian.id}">
                   <img src="${comedian?.thumbnail}" onerror="this.style.opacity=0;">
                 </a>
               </li>

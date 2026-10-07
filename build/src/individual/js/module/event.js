@@ -6,21 +6,21 @@ Module.event = {
     }
 
     events.forEach(event => {
-      const event_date = event.date.value,
+      const event_date = event.date?.value || '',
             event_id = event.event_id
 
       const venue = Var.venue_map.get(event.venue_id) || {}
 
       const html = `
-        <div class="calendar-event-unit" data-type="${event.type.value}" data-status="${event.status}">
+        <div class="calendar-event-unit" data-type="${event.type?.value}" data-status="${event.status}">
           <a class="js-modal-view" data-view="event" data-id="${event_id}" href="./?view=events&modal=event&id=${event_id}">
             <p class="calendar-event-unit-type">
               <span class="calendar-event-unit-tag">
-                <span class="event-${event.type.value}">${event.type.label}</span>
+                <span class="event-${event.type?.value}">${event.type?.label}</span>
               </span>
               <span class="calendar-event-unit-time">
-                <span>OPEN ${event.open}</span>
-                <span>START ${event.start}</span>
+                <span>OPEN ${event.open_at}</span>
+                <span>START ${event.start_at}</span>
               </span>
             </p>
             <p class="calendar-event-unit-name">${event.name}</p>

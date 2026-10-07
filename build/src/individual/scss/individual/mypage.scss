@@ -1,8 +1,9 @@
-.mypage-status[data-status="login"] {
+.mypage-status[data-status="loading"] {
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1.4 / 1;
+  width: 100%;
 
   svg {
     animation: keyframes-spin 1.5s linear infinite, keyframes-blinker 1s infinite;

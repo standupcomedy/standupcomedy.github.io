@@ -22,11 +22,11 @@ Module.venue = {
             <dd class="venues-addr-station">
               <a class="js-modal-view" data-view="venue" data-id="${venue_id}" href="./?view=venues&modal=venue&id=${venue_id}">
                 <p class="venue-addr">${venue.address}</p>
-                <p class="venue-station">${venue.station.map(text => `<span>${text}</span>`).join('')}</p>
+                <p class="venue-station">${venue.station?.map(text => `<span>${text}</span>`).join('')}</p>
               </a>
             </dd>
             <dd>
-              <a class="js-section-view" data-view="map" data-id="${venue_id}" href="./?view=map&venue_id=${venue_id}&lat=${venue.latlng.lat}&lng=${venue.latlng.lng}"><i class="fa-solid fa-location-dot"></i></a>
+              <a class="js-section-view" data-view="map" data-id="${venue_id}" href="./?view=map&venue_id=${venue_id}&lat=${venue.latlng?.lat}&lng=${venue.latlng?.lng}"><i class="fa-solid fa-location-dot"></i></a>
               ${(venue.socialmedia.instagram === "")? `` : `
                 <a href="https://www.instagram.com/${venue.socialmedia.instagram}"><i class="fa-brands fa-instagram"></i></a>
               `}
@@ -46,7 +46,7 @@ Module.venue = {
       `)
 
       html_map_list.push(`
-        <li data-id="${venue_id}" data-lat="${venue.latlng.lat}" data-lng="${venue.latlng.lng}">
+        <li data-id="${venue_id}" data-lat="${venue.latlng?.lat}" data-lng="${venue.latlng?.lng}">
           <div>
             <a>
               <span class="map-place-list-icon"><i class="fa-solid fa-location-dot"></i></span>

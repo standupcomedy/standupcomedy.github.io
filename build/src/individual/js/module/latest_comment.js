@@ -6,19 +6,19 @@ Module.latest_comment = {
     }
 
     const html = latest_comments.map(comment => {
-      const comedian = Var.comedian_map.get(comment.user_id)
+      const comedian = Var.comedian_map.get(comment.comedian_id)
 
       return `
         <li>
           <figure>
-            <a class="js-modal-view" data-view="comedian" data-id="${comment.user_id}" href="./?view=comedians&modal=comedian&id=${comment.user_id}">
+            <a class="js-modal-view" data-view="comedian" data-id="${comment.comedian_id}" href="./?view=comedians&modal=comedian&id=${comment.comedian_id}">
               <img src="${comedian?.thumbnail}" onerror="this.style.opacity=0;">
             </a>
           </figure>
           <div>
             <p>${comment.text}</p>
             <div class="voice-nav">
-              <span>${comment.date}</span>
+              <span>${comment.created_at}</span>
             </div>
           </div>
         </li>

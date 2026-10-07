@@ -1,7 +1,7 @@
 {
   "num": 0,
   "has_more": true,
-  "user_id": "a1",
+  "user_public_id": "a1",
   "comments": [{
     "comment_id": "44",
     "text": "11コメントテストコメントテストコメントテストコメントテストコメントテストコメントテストコメントテストコメントテスト",

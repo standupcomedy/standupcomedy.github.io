@@ -1,7 +1,7 @@
 Module.modal = Module.modal || {}
 
-Module.modal.getComedianHtml = (user_id) => {
-  const info = Var.comedian_map.get(user_id)
+Module.modal.getComedianHtml = (comedian_id) => {
+  const info = Var.comedian_map.get(comedian_id)
 
   info.joined_events || []
   info.applied_events || []
@@ -41,7 +41,7 @@ Module.modal.getComedianHtml = (user_id) => {
         </dl>
       </div>
 
-      ${(Var.login.user_id === user_id) ? `
+      ${(info.is_me) ? `
         <div style="padding: 0 0 20px;">
           <div class="user-profile-outer">
             <div class="user-profile">
@@ -63,7 +63,7 @@ Module.modal.getComedianHtml = (user_id) => {
       ` : ''}
 
       <div class="voice">
-        <ul class="js-voice-primary" data-id="${user_id}"></ul>
+        <ul class="js-voice-primary" data-id="${comedian_id}"></ul>
       </div>
 
       ${(!events.length ? `` : `
@@ -110,14 +110,14 @@ Module.modal.getComedianHtml = (user_id) => {
       `)}
 
       <div class="voice">
-        <ul class="js-voice-secondary" data-id="${user_id}"></ul>
+        <ul class="js-voice-secondary" data-id="${comedian_id}"></ul>
         <div class="voice-more-outer js-voice-more-outer">
-          <button class="js-voice-more" type="button" data-id="${user_id}">MORE</button>
+          <button class="js-voice-more" type="button" data-id="${comedian_id}">MORE</button>
         </div>
       </div>
 
       <nav class="user-nav-outer">
-        ${(Var.login.user_id === user_id) ? `` : `
+        ${(info.is_me) ? `` : `
           <div class="user-nav">
             <button type="button" class="js-user-view" value="user">フォローする</button>
           </div>

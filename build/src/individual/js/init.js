@@ -3,6 +3,11 @@ const ls_standup = Fn.storageLS('standup') || {}
 Var.login = {}
 Var.login.profiles = []
 
+Var.service_key = 'standup'
+Var.api_base_url = (location.hostname === 'standupcomedy.github.io') ?
+  'https://api.tabinoto.com' : 'http://localhost:8092'
+
+
 $(async () => {
   Fn.countFormText()
 
@@ -116,40 +121,46 @@ $(async () => {
   })
 
   // ソーシャルログイン
-  $(document).on('click', '.js-social-login', () => {
-    $(`.mypage-status[data-status="before"]`).hide()
-    $(`.mypage-status[data-status="login"]`).show()
+  $(document).on('click', '.js-social-login', function () {
+    const social_type = $(this).attr('data-type')
 
-    // TODO ソーシャルログインの実装（下記は成功時の再現）
-    setTimeout(() => {
-      Var.login.logged_in = true
-      Var.login.user_id = "a1"
+    const _login = $(`.mypage-status[data-status="login"]`),
+          _loading = $(`.mypage-status[data-status="loading"]`)
 
-      Var.login.profiles.push('comedian')
-      Var.login.profiles.push('venue_manager')
+    let href = ''
 
-      $(`.mypage-status[data-status="login"]`).hide()
-      $(`.mypage-status[data-status="mypage"]`).show()
+    _loading.css({height: _login.outerHeight()}).show()
+    _login.remove()
 
-      $(`.tabbar-profiles[data-has-profile="yes"]`).show()
-      $(`.tabbar-profiles[data-has-profile="no"]`).hide()
-    }, 1000)
+    switch (social_type) {
+      case 'google':
+        href = Var.api_base_url + '/auth/google?service=standup'
+        break
+
+      // default なし
+    }
+
+    location.href = href
   })
 
-  // API（初期ロード） TODO URL変更
-  const data = await Fn.api('./assets/dummy/init.js')
+  // ソーシャルログアウト
+  $(document).on('click', '.js-social-logout', function () {
+    const _mypage = $(`.mypage-status[data-status="mypage"]`),
+          _loading = $(`.mypage-status[data-status="loading"]`)
 
-  Var.login.logged_in = data.login.logged_in
-  Var.login.user_id = data.login.user_id
+    _loading.css({height: _mypage.outerHeight()}).show()
+    _mypage.remove()
+    location.href = Var.api_base_url + '/logout?service=standup'
+  })
 
-  // APIから取得したロール
-  Var.login.profiles = data.login.profiles ?? []
+  // API（初期表示用ロード）
+  const data = await Fn.api(`${Var.api_base_url}/init?service=${encodeURIComponent(Var.service_key)}`)
 
-  console.log("login", Var.login)
+  Var.login = data.login
 
   Var.comedian_map = new Map(
     data.comedians.map(comedian => [
-      comedian.user_id,
+      comedian.id,
       comedian
     ])
   )
@@ -163,20 +174,49 @@ $(async () => {
 
   Var.event_map = new Map(
     data.events.map(event => [
-      event.event_id,
+      String(event.id),
       event
     ])
   )
 
   Var.event_venue_map = new Map()
+
   data.events.forEach(event => {
+    event.candidates
+    .filter(candidate => candidate.venue_id !== null)
+    .forEach(candidate => {
+      const venue_id = String(candidate.venue_id),
+            event_id = String(event.id)
 
-    if (!Var.event_venue_map.has(event.venue_id)) {
-      Var.event_venue_map.set(event.venue_id, [])
-    }
+      if (!Var.event_venue_map.has(venue_id)) {
+        Var.event_venue_map.set(venue_id, [])
+      }
 
-    Var.event_venue_map.get(event.venue_id).push(event)
+      const event_ids = Var.event_venue_map.get(venue_id)
+
+      if (!event_ids.includes(event_id)) {
+        event_ids.push(event_id)
+      }
+    })
   })
+
+  Var.candidate_event_map = new Map(
+    data.events.flatMap(event =>
+      event.candidates.map(candidate => [
+        String(candidate.id),
+        String(event.id)
+      ])
+    )
+  )
+
+  // const event_ids = Var.event_venue_map.get('1');
+
+
+  if (Var.login.logged_in) {
+    $(`.mypage-status[data-status="login"]`).remove()
+  } else {
+    $(`.mypage-status[data-status="mypage"]`).remove()
+  }
 
   Module.comedian.render(data.comedians)
   Module.event.render(data.events)

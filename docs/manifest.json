@@ -1,6 +1,6 @@
 {
-  "name": "スタンダップ・コメディ",
-  "short_name": "Stand-up Comedy",
+  "name": "スタンダップ スポット",
+  "short_name": "Standup Spot",
   "start_url": "./?utm_source=homescreen",
   "display": "standalone",
   "orientation": "portrait",

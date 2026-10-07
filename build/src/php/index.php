@@ -1,20 +1,24 @@
 <?php
+// local(docker)
 $assets = '/var/www/html/assets';
+$api_domain = 'http://localhost:8092';
 
 if (!is_dir($assets)) {
-  $assets = __DIR__ . '/..
-/../docs/assets';
+
+  // production（github）
+  $assets = __DIR__ . '/../../docs/assets';
 }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>スタンダップ・コメディ</title>
+    <title>スタンダップ・スポット</title>
+    <script src="./assets/js/forceOpenExternalBrowser.js?<?php echo filemtime($assets . '/js/forceOpenExternalBrowser.js')?>"></script>
     <meta name="robots" content="ALL">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="format-detection" content="telephone=no,email=no,address=no,date=no">
-    <meta name="description" content="">
+    <meta name="description" content="このWebアプリ「スタンダップ・スポット」は、スタンダップコメディアンと、集客をお考えのカフェや酒場、バーのオーナーや店長、そして「インディーズ」「サブカル」「お笑い」というワードにビビッとくる方々をつなぎ、日常にクスッと笑顔になれる瞬間を添えるためにデザインしています。一緒に楽しみましょう！">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="./manifest.json">
     <link rel="shortcut icon" href="./assets/favicon.ico">
@@ -33,7 +37,7 @@ if (!is_dir($assets)) {
     <div class="wrapper">
       <div class="section" data-view="home">
         <div class="section-inner">
-          <h1 style="display: none;">あああスタンダップコメディを日本に広めたい</h1>
+          <h1 style="display: none;">スタンダップ・スポット</h1>
 
           <div class="news js-news">
             <table class="js-news-content"></table>
@@ -134,21 +138,23 @@ if (!is_dir($assets)) {
         <div class="section-inner">
           <h1 class="section-title">My Page</h1>
           <div class="mypage-login">
-            <div class="mypage-status js-mypage-status" data-status="before">
+            <div class="mypage-status js-mypage-status" data-status="login">
               <p class="mypage-login-ex">下記のログインを選択することで、<a class="js-modal-view" data-view="terms" href="./?modal=terms">利用規約</a>、<a class="js-modal-view" data-view="privacy" href="./?modal=privacy">プライバシーポリシー</a> に同意したことになります。</p>
               <ul class="mypage-login-list">
                 <li>
-                  <a class="js-social-login">Google でログイン</a>
+                  <a class="js-social-login" data-type="google">Google でログイン</a>
                 </li>
                 <li>
                   <a class="js-social-login">LINE でログイン</a>
                 </li>
               </ul>
             </div>
-            <div class="mypage-status js-mypage-status" data-status="login" style="display:none;">
+            <div class="mypage-status js-mypage-status" data-status="loading" style="display:none;">
               <i data-lucide="loader-circle"></i>
             </div>
-            <div class="mypage-status js-mypage-status" data-status="mypage" style="display:none;">
+            <div class="mypage-status js-mypage-status" data-status="mypage">
+
+              <a class="js-social-logout">ログアウト</a>
               <dl class="mypage-list">
                 <dt>アカウント</dt>
                 <dd>
@@ -183,7 +189,7 @@ if (!is_dir($assets)) {
           </div>
           <footer class="footer js-footer">
             <h2>What is this app, STANDUP SPOT?</h2>
-            <p>このWebアプリは、スタンダップコメディアンと、集客をお考えのカフェや酒場、バーのオーナーや店長、そして「インディーズ」「サブカル」「お笑い」というワードにビビッとくる方々をつなぎ、日常にクスッと笑顔になれる瞬間を添えるためにデザインしています。一緒に楽しみましょう！</p>
+            <p>このWebアプリ「スタンダップ・スポット」は、スタンダップコメディアンと、集客をお考えのカフェや酒場、バーのオーナーや店長、そして「インディーズ」「サブカル」「お笑い」というワードにビビッとくる方々をつなぎ、日常にクスッと笑顔になれる瞬間を添えるためにデザインしています。一緒に楽しみましょう！</p>
             <ul>
               <li><a class="js-modal-view" data-view="contact" href="./?modal=contact">お問い合わせ</a></li>
               <li><a class="js-modal-view" data-view="terms" href="./?modal=terms">利用規約</a></li>
