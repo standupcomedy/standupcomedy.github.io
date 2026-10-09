@@ -212,10 +212,17 @@ $(async () => {
   // const event_ids = Var.event_venue_map.get('1');
 
 
+
   if (Var.login.logged_in) {
     $(`.mypage-status[data-status="login"]`).remove()
   } else {
     $(`.mypage-status[data-status="mypage"]`).remove()
+  }
+
+  await setComedian()
+
+  if (Var.login.profiles.includes('venue_manager')) {
+    Fn.setToggleBtnRoll('venue_manager', 'on')
   }
 
   Module.comedian.render(data.comedians)

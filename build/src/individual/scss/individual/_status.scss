@@ -8,3 +8,27 @@
     display: none;
   }
 }
+
+
+.js-submit-toast {
+  position: relative;
+  width: 100%;
+
+  .toast {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+
+    &.toast-success {
+      color: #1cbb1c;
+    }
+
+    &.toast-error {
+      color: #c00;
+    }
+  }
+}

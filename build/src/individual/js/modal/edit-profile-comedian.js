@@ -3,21 +3,30 @@ Module.modal.getEditProfileComedianHtml = (id) => {
   return `
     <aside class="form">
       <h2>プロフィール編集</h2>
-      <form class="form">
+      <form class="js-form-comedian-thumbnail">
+        <dl>
+          <div>
+            <dt>サムネイル画像</dt>
+            <dd>
+              <div>
+                <input type="file" name="thumbnail" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              </div>
+            </dd>
+          </div>
+        </dl>
+        <nav class="form-save-outer">
+          <div class="form-save js-submit-toast">
+            <button type="submit" class="js-submit-comedian-thumbnail">保存する</button>
+          </div>
+        </nav>
+      </form>
+      <form class="js-form-comedian-profile">
         <dl>
           <div>
             <dt>コメディアン・ネーム</dt>
             <dd>
               <div>
-                <input type="text">
-              </div>
-            </dd>
-          </div>
-          <div>
-            <dt>サムネイル画像</dt>
-            <dd>
-              <div>
-                <input type="text">
+                <input type="text" name="name">
               </div>
             </dd>
           </div>
@@ -42,8 +51,8 @@ Module.modal.getEditProfileComedianHtml = (id) => {
           </div>
         </dl>
         <nav class="form-save-outer">
-          <div class="form-save">
-            <button type="button">保存する</button>
+          <div class="form-save js-submit-toast">
+            <button type="submit" class="js-submit-comedian-profile">保存する</button>
           </div>
         </nav>
       </form>

@@ -99,6 +99,22 @@ const showModal = async (modal_type, modal_id) => {
       $('.js-modal-content-scroll').scrollTop(1)
       break
 
+    case 'edit-profile-comedian':
+
+      if (!Var.comedian_profile) {
+        break
+      }
+
+      const _form_comedian_profile = $('.js-form-comedian-profile')
+
+      $('input[name="name"]', _form_comedian_profile).val(Var.comedian_profile.name)
+      $('input[name="instagram"]', _form_comedian_profile).val(Var.comedian_profile.socialmedia.instagram)
+      $('input[name="tiktok"]', _form_comedian_profile).val(Var.comedian_profile.socialmedia.tiktok)
+      $('input[name="x"]', _form_comedian_profile).val(Var.comedian_profile.socialmedia.x)
+      $('input[name="youtube"]', _form_comedian_profile).val(Var.comedian_profile.socialmedia.youtube)
+
+      break
+
     // defaultなし
   }
 
