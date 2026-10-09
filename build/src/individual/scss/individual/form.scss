@@ -177,4 +177,12 @@
 .form-save {
   @include nav-button;
   @include nav-button-white;
+
+  display: block;
+  border: none;
+
+  button {
+    margin: auto;
+    border: 1px solid #333;
+  }
 }

@@ -160,7 +160,7 @@ if (!is_dir($assets)) {
                 <dd>
                   <div class="form-toggle js-form-toggle" data-status="on">
                     <p>オーディエンス</p>
-                    <div class="form-toggle-button disable" data-status="on">
+                    <div class="form-toggle-button disable" data-role="member" data-status="on">
                       <input type="hidden" name="role_audience" value="1">
                     </div>
                   </div>
@@ -168,7 +168,7 @@ if (!is_dir($assets)) {
                 <dd>
                   <div class="form-toggle js-form-toggle" data-status="off">
                     <p>コメディアン</p>
-                    <div class="form-toggle-button js-form-toggle-button" data-status="off">
+                    <div class="form-toggle-button js-form-toggle-button" data-role="comedian" data-status="off">
                       <input type="hidden" name="role_comedian" value="0">
                     </div>
                   </div>
@@ -177,7 +177,7 @@ if (!is_dir($assets)) {
                 <dd>
                   <div class="form-toggle js-form-toggle" data-status="off">
                     <p>会場 オーナー、店長</p>
-                    <div class="form-toggle-button js-form-toggle-button" data-status="off">
+                    <div class="form-toggle-button js-form-toggle-button" data-role="venue_manager" data-status="off">
                       <input type="hidden" name="role_venue_manager" value="0">
                     </div>
                   </div>
