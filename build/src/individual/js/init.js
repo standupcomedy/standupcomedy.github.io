@@ -5,7 +5,7 @@ Var.login.profiles = []
 
 Var.service_key = 'standup'
 Var.api_base_url = (location.hostname === 'standupcomedy.github.io') ?
-  'https://api.tabinoto.com' : 'http://localhost:8092'
+  'https://api.standupspot.com' : 'http://localhost:8092'
 
 
 $(async () => {
